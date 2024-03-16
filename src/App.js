@@ -34,7 +34,7 @@ export default function App() {
   }, []);
   return (
     <div className="App">
-      {data &&
+      {data ?
         data.map((ele) => {
           return (
             <div className="card">
@@ -44,7 +44,7 @@ export default function App() {
               <div>{ele.capital}</div>
             </div>
           );
-        })}
+        }):<div>error</div>}
     </div>
   );
 }

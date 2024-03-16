@@ -44,7 +44,7 @@ export default function App() {
               <div>{ele.capital}</div>
             </div>
           );
-        }):<div>error</div>}
+        }):<div>{error?<div>{error}</div>:""}</div>}
     </div>
   );
 }

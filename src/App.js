@@ -12,25 +12,24 @@ export default function App() {
     const apiUrl = "https://restcountries.com/v3.1/all";
 
     // Fetch data from the API
-    fetch(apiUrl)
-      .then((response) => {
-        // Check if the response is successful (status code 200)
+   const fetchData = async () => {
+      try {
+        const response = await fetch(apiUrl);
+
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error('Network response was not ok');
         }
-        // Parse the JSON response
-        return response.json();
-      })
-      .then((data) => {
-        // Set the data in state
-        setData(data);
+
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        setError(error.message);
+      } finally {
         setLoading(false);
-      })
-      .catch((error) => {
-        // Set the error in state
-        setError(error);
-        setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
   return (
     <div className="App">

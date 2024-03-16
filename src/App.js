@@ -9,6 +9,7 @@ export default function App() {
 
   useEffect(() => {
     // URL of the API endpoint you want to call
+    console.log("changing");
     const apiUrl = "https://restcountries.com/v3.1/all";
 
     // Fetch data from the API

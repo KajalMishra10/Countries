@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.card {
+  border: 1px solid grey;
+  border-radius: 16px;
+}
+.img {
+}
